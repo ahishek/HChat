@@ -64,7 +64,7 @@
                 android:layout_marginRight="@dimen/spacing_10"
                 android:layout_gravity="end"
                 android:paddingBottom="@dimen/spacing_5"
-                android:paddingRight="@dimen/spacing_5"
+                android:paddingRight="@dimen/spacing_20"
                 tools:text="17:10"
                 android:textColor="@android:color/darker_gray"/>
 
