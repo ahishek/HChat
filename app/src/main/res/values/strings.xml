@@ -6,4 +6,6 @@
     <string name="title_activity_chat">Your Chats</string>
     <string name="error_view">Uh-oh! We seem to be down! Could you try again in some time?</string>
     <string name="empty_chats">You don\'t seem to have any chats! Why don\'t you start?</string>
+    <string name="number_string_1">The number of messages sent by</string>
+    <string name="string_is">is</string>
 </resources>

@@ -41,6 +41,10 @@ public class ChatListAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public ChatMessage getData(int position) {
+        return chatMessages.get(position);
+    }
+
 
     @Override
     public int getCount() {
@@ -63,37 +67,11 @@ public class ChatListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = null;
         ChatMessage message = chatMessages.get(position);
+        ChatMessage prevMessage = null;
         RightViewHolder rightViewHolder;
         LeftViewHolder leftViewHolder;
 
         if (position % 2 == 0) {
-            if (convertView == null) {
-                v = LayoutInflater.from(context).inflate(R.layout.chat_head_left, null, false);
-                rightViewHolder = new RightViewHolder();
-                rightViewHolder.messageTextView = (TextView) v.findViewById(R.id.user_message_tv);
-                rightViewHolder.timeTextView = (TextView) v.findViewById(R.id.time_tv);
-                rightViewHolder.userNameTv = (TextView) v.findViewById(R.id.user_name_tv);
-                v.setTag(rightViewHolder);
-            } else {
-                v = convertView;
-                rightViewHolder = (RightViewHolder) v.getTag();
-            }
-
-            rightViewHolder.messageTextView.setText(message.body);
-            rightViewHolder.userNameTv.setText(message.Name);
-            String dateString = "";
-            try {
-                Date date = SIMPLE_DATE_FORMAT.parse(message.messageTime);
-                dateString = String.valueOf(date.getMinutes()) + ":" + String.valueOf(date.getSeconds());
-            } catch (ParseException e) {
-                Log.d("ADAPTER", "ParseException");
-            }
-            if (!TextUtils.isEmpty(dateString)) {
-                rightViewHolder.timeTextView.setText(dateString);
-            }
-
-        } else {
-
             if (convertView == null) {
                 v = LayoutInflater.from(context).inflate(R.layout.chat_head_right, null, false);
                 leftViewHolder = new LeftViewHolder();
@@ -113,12 +91,37 @@ public class ChatListAdapter extends BaseAdapter {
             String dateString = "";
             try {
                 Date date = SIMPLE_DATE_FORMAT.parse(message.messageTime);
-                dateString = String.valueOf(date.getMinutes()) +":" + String.valueOf(date.getSeconds());
+                dateString = String.valueOf(date.getHours()) +":" + String.valueOf(date.getMinutes());
             } catch (ParseException e) {
                 Log.d("ADAPTER", "ParseException");
             }
             if (!TextUtils.isEmpty(dateString)) {
                 leftViewHolder.timeTextView.setText(dateString);
+            }
+        } else {
+            if (convertView == null) {
+                v = LayoutInflater.from(context).inflate(R.layout.chat_head_left, null, false);
+                rightViewHolder = new RightViewHolder();
+                rightViewHolder.messageTextView = (TextView) v.findViewById(R.id.user_message_tv);
+                rightViewHolder.timeTextView = (TextView) v.findViewById(R.id.time_tv);
+                rightViewHolder.userNameTv = (TextView) v.findViewById(R.id.user_name_tv);
+                v.setTag(rightViewHolder);
+            } else {
+                v = convertView;
+                rightViewHolder = (RightViewHolder) v.getTag();
+            }
+
+            rightViewHolder.messageTextView.setText(message.body);
+            rightViewHolder.userNameTv.setText(message.Name);
+            String dateString = "";
+            try {
+                Date date = SIMPLE_DATE_FORMAT.parse(message.messageTime);
+                dateString = String.valueOf(date.getHours()) + ":" + String.valueOf(date.getMinutes());
+            } catch (ParseException e) {
+                Log.d("ADAPTER", "ParseException");
+            }
+            if (!TextUtils.isEmpty(dateString)) {
+                rightViewHolder.timeTextView.setText(dateString);
             }
         }
         return v;
