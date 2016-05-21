@@ -40,7 +40,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/chat_edit_text1"
+                android:id="@+id/chat_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/spacing_8"
@@ -56,7 +56,7 @@
                 android:id="@+id/enter_chat1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/chat_edit_text1"
+                android:layout_alignBottom="@id/chat_text"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginBottom="@dimen/spacing_8"

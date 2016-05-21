@@ -1,5 +1,6 @@
 package com.example.abhisheknair.hchat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
@@ -23,7 +24,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_login:
+                Intent intent = new Intent(this, ChatActivity.class);
+                startActivity(intent);
+                break;
 
+            default:
+                break;
         }
     }
 }
