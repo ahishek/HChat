@@ -27,8 +27,8 @@
 
                 <ImageView
                     android:id="@+id/user_image_iv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginBottom="@dimen/spacing_5"
                     android:layout_marginEnd="@dimen/spacing_10"
                     android:layout_marginRight="@dimen/spacing_10"
