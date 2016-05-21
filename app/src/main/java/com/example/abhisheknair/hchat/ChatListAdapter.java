@@ -84,7 +84,7 @@ public class ChatListAdapter extends BaseAdapter {
             String dateString = "";
             try {
                 Date date = SIMPLE_DATE_FORMAT.parse(message.messageTime);
-                dateString = String.valueOf(date.getMinutes()) + "." + String.valueOf(date.getSeconds());
+                dateString = String.valueOf(date.getMinutes()) + ":" + String.valueOf(date.getSeconds());
             } catch (ParseException e) {
                 Log.d("ADAPTER", "ParseException");
             }
@@ -113,7 +113,7 @@ public class ChatListAdapter extends BaseAdapter {
             String dateString = "";
             try {
                 Date date = SIMPLE_DATE_FORMAT.parse(message.messageTime);
-                dateString = String.valueOf(date.getMinutes()) +"." + String.valueOf(date.getSeconds());
+                dateString = String.valueOf(date.getMinutes()) +":" + String.valueOf(date.getSeconds());
             } catch (ParseException e) {
                 Log.d("ADAPTER", "ParseException");
             }
