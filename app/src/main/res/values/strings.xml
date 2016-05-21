@@ -2,4 +2,6 @@
     <string name="app_name">HChat</string>
     <string name="enter_chat">View Chats</string>
     <string name="welcome">Welcome to HChat!</string>
+    <string name="hint_text">Enter Text Here</string>
+    <string name="title_activity_chat">Your Chats</string>
 </resources>

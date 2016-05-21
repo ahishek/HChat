@@ -1,0 +1,74 @@
+<RelativeLayout android:id="@+id/chat_layout"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background"
+                tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="@string/title_activity_chat"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+
+    <ListView
+        android:id="@+id/chat_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/bottomlayout"
+        android:divider="@drawable/list_divider"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:scrollbarStyle="outsideOverlay"></ListView>
+
+    <LinearLayout
+        android:id="@+id/bottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/chat_edit_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_8"
+                android:layout_marginTop="@dimen/spacing_8"
+                android:layout_toLeftOf="@+id/enter_chat1"
+                android:layout_toStartOf="@+id/enter_chat1"
+                android:hint="@string/hint_text"
+                android:paddingLeft="@dimen/spacing_12"
+                android:scrollHorizontally="false"
+                android:textSize="@dimen/font_size_18"/>
+
+            <ImageView
+                android:id="@+id/enter_chat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/chat_edit_text1"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/spacing_8"
+                android:paddingEnd="17dp"
+                android:paddingLeft="13dp"
+                android:paddingRight="17dp"
+                android:paddingStart="13dp"
+                android:src="@android:drawable/ic_menu_send"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
