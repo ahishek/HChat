@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">HChat</string>
     <string name="enter_chat">View Chats</string>
+    <string name="welcome">Welcome to HChat!</string>
 </resources>

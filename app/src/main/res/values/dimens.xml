@@ -7,4 +7,6 @@
     <dimen name="spacing_24">24dp</dimen>
     <dimen name="spacing_60">60dp</dimen>
     <dimen name="spacing_190">190dp</dimen>
+
+    <dimen name="font_size_30">30sp</dimen>
 </resources>
