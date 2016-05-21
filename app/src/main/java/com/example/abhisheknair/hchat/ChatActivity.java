@@ -119,7 +119,7 @@ public class ChatActivity extends AppCompatActivity implements ListView.OnItemCl
         int i, sum;
         for (sum=0, i=0; i < x.length(); i++)
             sum += ch[i];
-        return sum % 27;
+        return sum % 1000;
     }
 
     @Override
