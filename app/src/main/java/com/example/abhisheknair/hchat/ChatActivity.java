@@ -23,6 +23,7 @@ public class ChatActivity extends AppCompatActivity {
     private ChatResponse chatAPIresponse;
     private Gson gson;
     private ListView mListView;
+    private ChatListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ public class ChatActivity extends AppCompatActivity {
         chatAPIresponse = new ChatResponse();
         gson = new Gson();
         mListView = (ListView) findViewById(R.id.chat_list_view);
+        mAdapter = new ChatListAdapter(this);
+        mListView.setAdapter(mAdapter);
         hitAPIURL();
     }
 
@@ -77,6 +80,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void populateListView() {
+        mAdapter.setData(chatAPIresponse.messages);
     }
 
 }
