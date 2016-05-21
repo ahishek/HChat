@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -49,6 +50,8 @@ public class ChatActivity extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.chat_list_view);
         mAdapter = new ChatListAdapter(this);
         mListView.setAdapter(mAdapter);
+        EditText chatEditText = (EditText) findViewById(R.id.chat_text);
+        chatEditText.setEnabled(false);
         hitAPIURL();
     }
 
@@ -81,6 +84,12 @@ public class ChatActivity extends AppCompatActivity {
 
     private void populateListView() {
         mAdapter.setData(chatAPIresponse.messages);
+        mListView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mListView.setSelection(mAdapter.getCount() - 1);
+            }
+        }, 500);
     }
 
 }
