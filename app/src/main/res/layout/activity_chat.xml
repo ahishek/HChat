@@ -25,7 +25,7 @@
         android:divider="@drawable/list_divider"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:scrollbarStyle="outsideOverlay"></ListView>
+        android:scrollbarStyle="outsideOverlay"/>
 
     <LinearLayout
         android:id="@+id/bottomlayout"
@@ -48,7 +48,7 @@
                 android:layout_toLeftOf="@+id/send_chat_iv"
                 android:layout_toStartOf="@+id/send_chat_iv"
                 android:hint="@string/hint_text"
-                android:editable="false"
+                android:inputType="none"
                 android:paddingLeft="@dimen/spacing_12"
                 android:scrollHorizontally="false"
                 android:textSize="@dimen/font_size_18"/>

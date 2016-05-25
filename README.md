@@ -1,11 +1,10 @@
 # HChat
 
-The API endpoint provided returns data regarding a chat conversation between a groups of
+A Sample chat app which displays a chat between multiple users. 
 
-people. Your assignment today is to use that endpoint to build an android app which meets the
+Shows the chats in a whatsapp like bubble.
 
-below requirements
+Asynchronously loads images for each user.
 
-1. The app should showcase the actual conversation that took place between the users.
+Shows how many chats each user has sent in the chat.
 
-2. The app should show a how many messages each user in the conversation has sent
